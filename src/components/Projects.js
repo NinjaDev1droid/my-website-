@@ -4,7 +4,7 @@ import LaunchIcon from '@material-ui/icons/Launch'
 import projects from './projectsData'
 import './protfolio.css'
 
-const ProjectCard = ({ project, index }) => (
+export const ProjectCard = ({ project, index }) => (
     <article
         className={`project-card${project.featured ? ' project-card--featured' : ''}`}
         style={{ animationDelay: `${index * 0.08}s` }}
