@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from "framer-motion";
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import InstagramIcon from '@material-ui/icons/Instagram'
@@ -12,59 +11,70 @@ const XIcon = (props) => (
     </SvgIcon>
 )
 
+// Same technologies shown on the home page hero
+const skills = [
+    'JavaScript', 'React', 'Angular', 'HTML', 'CSS',
+    'Java', 'C#', 'Python', 'Go', 'Ruby', 'SQL', 'Firebase', 'Git',
+]
+
+const socials = [
+    { href: 'https://github.com/NinjaDev1droid', label: 'GitHub', className: 'github-btn', Icon: GitHubIcon },
+    { href: 'https://www.linkedin.com/in/goanar-abraham-5082b821a/', label: 'LinkedIn', className: 'linkedin-btn', Icon: LinkedInIcon },
+    { href: 'https://x.com/gagag131', label: 'X', className: 'twitter-btn', Icon: XIcon },
+    { href: 'https://www.instagram.com/king_g___00007', label: 'Instagram', className: 'instagram-btn', Icon: InstagramIcon },
+]
+
 const About = () => {
     return (
-        <div className=" container py-5">
-            <div className="row">
-                <div className="col-lg-6 col-md-12">
-                    <div className="image-wraper">
-                        <motion.img
-                        className=" profile-img"
-                        style={{width:"26rem"}}
-                            src="./images2/gog.jpeg" alt="....."
-                        
-                            animate={{
-                                scale: [1, 1, 1, 1, 1],
-                                rotate: [0, 0, 270, 270, 0],
-                                borderRadius: ["20%", "20%", "50%", "50%", "20%"]
-                            }}
-                            transition={{
-                                duration: 4,
-                                ease: "easeInOut",
-                                times: [0, 0.2, 0.5, 0.8, 1],
-                                loop: Infinity,
-                                repeatDelay: 4
-                            }}
-                        />
-                       
-                        
+        <section className="about-section">
+            <div className="container py-5">
+                <div className="row align-items-center">
+                    <div className="col-lg-5 col-md-12 mb-5 mb-lg-0">
+                        <div className="about-photo-frame">
+                            <img className="about-photo" src="./images2/gog.jpeg" alt="Goanar Abraham" />
+                        </div>
                     </div>
 
-                </div>
-                <div className="col-lg-6 col-md-12 mb-4">
+                    <div className="col-lg-7 col-md-12 about-content">
+                        <span className="about-eyebrow">Hi, I'm Goanar Abraham</span>
+                        <h1 className="about-title">About Me</h1>
+                        <p className="about-text">
+                            Full Stack developer with over a year of experience. Effective and reliable
+                            working autonomously and as part of a team. I am motivated to continue my
+                            career in Front and Back End Development, as well as in learning other coding
+                            languages. Dedicated athlete that has competed in national competitions.
+                        </p>
 
-                    <h1 className="about-title mt-5">about Me</h1>
-                    <p className="about-text" style={{fontSize:"22px"}}>
-                    Full Stack developer with over a year of experience.  Effective and reliable working autonomously and as part of a team. I am motivated to continue my career in Front and Back End Development, as well as in learning other coding languages. Dedicated athlete that has competed in national competitions
-                    </p>
+                        <h2 className="about-subheading">Skills</h2>
+                        <ul className="about-skills">
+                            {skills.map((skill) => (
+                                <li key={skill}>{skill}</li>
+                            ))}
+                        </ul>
+
+                        <div className="about-actions">
+                            <a href="/projects" className="project-btn project-btn--solid">View my projects</a>
+                            <a href="/contact" className="project-btn project-btn--ghost">Contact me</a>
+                        </div>
+
+                        <div className="about-social-row">
+                            {socials.map(({ href, label, className, Icon }) => (
+                                <a
+                                    key={label}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label={label}
+                                    className={`social-icon-btn ${className}`}
+                                >
+                                    <Icon style={{ fontSize: 24 }} />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div className="about-social-row">
-                <a href="https://github.com/NinjaDev1droid" target="_blank" rel="noreferrer" className="social-icon-btn github-btn">
-                    <GitHubIcon style={{ fontSize: 26 }} />
-                </a>
-                <a href="https://www.linkedin.com/in/goanar-abraham-5082b821a/" target="_blank" rel="noreferrer" className="social-icon-btn linkedin-btn">
-                    <LinkedInIcon style={{ fontSize: 26 }} />
-                </a>
-                <a href="https://x.com/gagag131" target="_blank" rel="noreferrer" className="social-icon-btn twitter-btn">
-                    <XIcon style={{ fontSize: 26 }} />
-                </a>
-                <a href="https://www.instagram.com/king_g___00007" target="_blank" rel="noreferrer" className="social-icon-btn instagram-btn">
-                    <InstagramIcon style={{ fontSize: 26 }} />
-                </a>
-            </div>
-        </div>
+        </section>
     )
 }
 
