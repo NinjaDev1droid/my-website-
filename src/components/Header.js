@@ -4,7 +4,6 @@ import GitHubIcon from "@material-ui/icons/GitHub"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import { ProjectCard } from "./Projects"
 import projects from "./projectsData"
-import heroImage from "../computer4.jpeg"
 
 const CV_URL = "https://docs.google.com/document/u/0/d/1A4UongUfZBG0HrK-fvtnr06Ao_-cvDSASImx2_ESgy0/mobilebasic"
 
@@ -65,9 +64,6 @@ const Header = () => {
                         </div>
                     </div>
 
-                    <div className="hero__visual">
-                        <img src={heroImage} alt="Laptop surrounded by programming language logos" />
-                    </div>
                 </div>
             </section>
 
