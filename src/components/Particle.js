@@ -3,10 +3,10 @@ import Particles from 'react-particles-js';
 
 const Particle = () => {
     return (
-        <div>
+        <div style={{ pointerEvents: 'none' }}>
 
             <Particles
-
+                style={{ pointerEvents: 'none' }}
                 className="particle-canves"
                 params={{
                     particles: {

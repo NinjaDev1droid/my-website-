@@ -21,11 +21,11 @@ const Contact = () => {
         <div>
         <div className=" container contact3">
             <div className="row">
-                <div className="col-lg-6 col-md-12 mt-3">
-                    <img src="./images2/gog1.jpeg" alt="Auther"  className="conatctImage"/>
-                </div>
+                {/* <div className="col-lg-6 col-md-12 mt-3">
+                    <img src="./images2/computer.png" alt="Auther"  className="conatctImage"/>
+                </div> */}
                 <div className="col-lg-6 col-md-12">
-                    <h2 className=" col-md-12">Quick Contact</h2>
+                    {/* <h2 className=" col-md-12">Quick Contact</h2> */}
                     <form onSubmit={sendEmail}>
                         <div className=" form-control-lg mt-3">
                             <input className="form-control" type="text" placeholder="name" name="name" />

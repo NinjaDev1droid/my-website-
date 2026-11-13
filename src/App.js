@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
+import Particle from "./components/Particle";
 
 
 
@@ -14,10 +15,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Particle from "./components/Particle";
-import ContactIcons from "./components/ContactIcons";
 import UploadImage from "./components/UploadImage";
-import  MainGallery from "./components/Galley";
+import Projects from "./components/Projects";
 
 
 function App() {
@@ -29,23 +28,18 @@ function App() {
           <Route exact path="/">
             <Particle />
             <Header />
-            <ContactIcons/>
           </Route>
           <Route exact path="/about">
-          <Particle />
             <About />
-            <ContactIcons/>
           </Route>
           <Route exact path="/contact">
             <Contact />
           </Route>
           <Route exact path="/login">
-          <Particle />
-          <Login />
-          <ContactIcons/>
-        </Route>
-        <Route exact path="/gallery">
-           < MainGallery/>
+            <Login />
+          </Route>
+        <Route exact path="/projects">
+            <Projects />
           </Route>
           
         </Switch>

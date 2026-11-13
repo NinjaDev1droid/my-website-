@@ -1,47 +1,38 @@
 import React from 'react'
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import PhoneIcon from '@material-ui/icons/Phone'
+import EmailIcon from '@material-ui/icons/Email'
+import './protfolio.css'
 
 const ContactIcons = () => {
     return (
-        <div className="container contact3 mr-5 col-sm-12 contactIcons">
-        <div className="wraper contactIcons">
-            <div className="display-flex">
-            <div>
-                <img className="address" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png" alt="....." />
+        <div className="contact-icons-section">
+            <div className="contact-icon-card">
+                <div className="contact-icon-circle">
+                    <LocationOnIcon style={{ fontSize: 30, color: "#fff" }} />
+                </div>
+                <h6 className="contact-icon-title">Address</h6>
+                <p className="contact-icon-text">Tel Aviv<br />Israel</p>
+            </div>
 
-            </div>
-            <div>
-                <h6 className="contactTitle">Address</h6>
-                <p style={{color:"#27273f"}}>Tel aviv <br />Israel</p>
-            </div>
-            </div>
-        
-            <div className="display-flex">
-
-            <div>
-                <a href="tel:0537315943">
-                <img className="address" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png" alt="....." />
+            <div className="contact-icon-card">
+                <a href="tel:0537315943" className="contact-icon-link">
+                    <div className="contact-icon-circle">
+                        <PhoneIcon style={{ fontSize: 30, color: "#fff" }} />
+                    </div>
                 </a>
+                <h6 className="contact-icon-title">Phone</h6>
+                <p className="contact-icon-text">0537315943<br />0552405027</p>
             </div>
-            <div>
-                <h6 className="contactTitle"> phone</h6>
-                <p style={{color:"#27273f"}}>0537315943 <br />0552405027</p>
-            </div>
-            </div>
-            <div className="display-flex">
 
-            <div>
-                <img className="address" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png" alt="....." />
-
+            <div className="contact-icon-card">
+                <div className="contact-icon-circle">
+                    <EmailIcon style={{ fontSize: 30, color: "#fff" }} />
+                </div>
+                <h6 className="contact-icon-title">Email</h6>
+                <p className="contact-icon-text">goanarbol811@gmail.com</p>
             </div>
-            <div>
-                <h6 className="contactTitle">Email</h6>
-                <p style={{color:"#27273f"}}>goanarbol811@gmail.com <br />goanarbol811@gmail.com</p>
-            </div>
-            </div>
-            
         </div>
-            
-            </div>
     )
 }
 

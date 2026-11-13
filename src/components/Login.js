@@ -62,14 +62,14 @@ export default function Login() {
   return (
     <Container component="main" maxWidth="xs" className={classes.index}>
       <CssBaseline />
-      <div className={classes.paper}>
+      <div className={`${classes.paper} login-card`}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form, classes.index} noValidate onSubmit={handlLogin}>
+        <form className={`${classes.form} ${classes.index}`} noValidate onSubmit={handlLogin}>
           <TextField
             variant="outlined"
             margin="normal"
