@@ -42,7 +42,12 @@ function App() {
         </Switch>
 
       </Router>
-     
+
+      <footer className="site-footer">
+        <div className="container">
+          © {new Date().getFullYear()} Goanar Abraham
+        </div>
+      </footer>
     </div>
   );
 }

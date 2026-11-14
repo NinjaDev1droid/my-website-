@@ -37,18 +37,35 @@ export const ProjectCard = ({ project, index }) => (
 )
 
 const Projects = () => {
+    const liveCount = projects.filter((p) => p.demo).length
+
     return (
         <section className="projects-page">
             <div className="container py-5">
-                <h1 className="about-title text-center mb-2">My Projects</h1>
-                <p className="projects-subtitle">
-                    Things I've built — see more on{' '}
-                    <a href="https://github.com/NinjaDev1droid" target="_blank" rel="noreferrer">GitHub</a>.
-                </p>
+                <div className="section-heading section-heading--row projects-header">
+                    <div>
+                        <span className="section-heading__eyebrow">Portfolio</span>
+                        <h1 className="section-heading__title projects-title">My Projects</h1>
+                        <p className="projects-subtitle">
+                            {projects.length} projects · {liveCount} live on the web. Click <strong>Live demo</strong> to
+                            try a project or <strong>Code</strong> to see the source.
+                        </p>
+                    </div>
+                    <a href="https://github.com/NinjaDev1droid" target="_blank" rel="noreferrer" className="project-btn project-btn--ghost">
+                        <GitHubIcon style={{ fontSize: 18 }} /> GitHub profile
+                    </a>
+                </div>
+
                 <div className="projects-grid">
                     {projects.map((project, i) => (
                         <ProjectCard key={project.repo} project={project} index={i} />
                     ))}
+                </div>
+
+                <div className="cta-band projects-cta">
+                    <h2>Like what you see?</h2>
+                    <p>I'm available for new projects. Tell me what you want to build.</p>
+                    <a href="/contact" className="project-btn project-btn--solid">Get in touch</a>
                 </div>
             </div>
         </section>

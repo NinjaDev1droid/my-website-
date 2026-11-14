@@ -48,8 +48,8 @@ const projects = [
     {
         title: "Personal Portfolio",
         description:
-            "This website — a React portfolio with animated particles, an email contact form and Firebase login.",
-        tags: ["React", "Firebase", "Bootstrap"],
+            "This website: a responsive React portfolio with a dark theme, project cards and a working email contact form.",
+        tags: ["React", "Bootstrap", "EmailJS"],
         repo: `${GITHUB}/my-website-`,
     },
 ];

@@ -1401,3 +1401,23 @@ body {
 @media (max-width: 480px) {
     .about-stats { grid-template-columns: 1fr; }
 }
+
+/* Projects page header + CTA */
+.projects-header {
+    margin-bottom: 2.5rem;
+}
+.projects-title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+}
+.projects-header .projects-subtitle {
+    text-align: left;
+    margin: 0.75rem 0 0;
+    font-size: 1.05rem;
+}
+.projects-header .projects-subtitle strong {
+    color: var(--text);
+    font-weight: 500;
+}
+.projects-cta {
+    margin-top: 4rem;
+}
