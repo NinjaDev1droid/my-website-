@@ -117,7 +117,7 @@ const Header = () => {
 
             <footer className="site-footer">
                 <div className="container">
-                    © {new Date().getFullYear()} Goanar Abraham · Built with React
+                    © {new Date().getFullYear()} Goanar Abraham
                 </div>
             </footer>
         </>

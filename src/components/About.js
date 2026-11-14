@@ -3,6 +3,7 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import SvgIcon from '@material-ui/core/SvgIcon'
+import projects from './projectsData'
 import './protfolio.css'
 
 const XIcon = (props) => (
@@ -39,11 +40,26 @@ const About = () => {
                         <span className="about-eyebrow">Hi, I'm Goanar Abraham</span>
                         <h1 className="about-title">About Me</h1>
                         <p className="about-text">
-                            Full Stack developer with over a year of experience. Effective and reliable
+                            Full Stack developer with 3 years of experience. Effective and reliable
                             working autonomously and as part of a team. I am motivated to continue my
                             career in Front and Back End Development, as well as in learning other coding
                             languages. Dedicated athlete that has competed in national competitions.
                         </p>
+
+                        <div className="about-stats">
+                            <div>
+                                <strong>3</strong>
+                                <span>Years of experience</span>
+                            </div>
+                            <div>
+                                <strong>{projects.length}</strong>
+                                <span>Projects on GitHub</span>
+                            </div>
+                            <div>
+                                <strong>Full Stack</strong>
+                                <span>Front &amp; back end</span>
+                            </div>
+                        </div>
 
                         <h2 className="about-subheading">Skills</h2>
                         <ul className="about-skills">

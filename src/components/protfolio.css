@@ -1389,3 +1389,31 @@ body {
 @media (max-width: 991px) {
     .contact-intro .contact-lead { text-align: left; }
 }
+
+/* About: stats row */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.about-stats > div {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+}
+.about-stats strong {
+    display: block;
+    color: var(--accent);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.about-stats span {
+    color: var(--text-muted) !important;
+    font-size: 0.85rem;
+}
+@media (max-width: 480px) {
+    .about-stats { grid-template-columns: 1fr; }
+}
