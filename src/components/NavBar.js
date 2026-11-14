@@ -18,7 +18,7 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark site-nav">
       <div className="container">
         <a className="navbar-brand" href="/">
-          <span className="brand-logo">GOANAR</span>
+          <span className="brand-logo">Goanar Abraham</span>
         </a>
         <button
           className="navbar-toggler"
@@ -40,9 +40,6 @@ const NavBar = () => {
                 </a>
               </li>
             ))}
-            <li className="nav-item">
-              <a className={`nav-link nav-link--muted${path === "/login" ? " active" : ""}`} href="/login">Login</a>
-            </li>
           </ul>
         </div>
       </div>

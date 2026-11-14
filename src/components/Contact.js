@@ -1,56 +1,115 @@
-import React from 'react'
-import emailjs from 'emailjs-com';
-import ContactIcons from './ContactIcons';
+import React, { useState } from 'react'
+import emailjs from 'emailjs-com'
+import EmailIcon from '@material-ui/icons/Email'
+import PhoneIcon from '@material-ui/icons/Phone'
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import './protfolio.css'
+
+const EMAIL = 'goanarbol811@gmail.com'
 
 const Contact = () => {
+    const [status, setStatus] = useState('idle') // idle | sending | sent | error
 
+    function sendEmail(e) {
+        e.preventDefault()
+        const form = e.target
+        setStatus('sending')
 
+        // Field names (name, email, subject, message) must match the EmailJS template
+        emailjs.sendForm('service_29ymbsk', 'template_cxd2sqi', form, 'user_fK8VafB6YT6akPU8QWWt1')
+            .then(() => {
+                setStatus('sent')
+                form.reset()
+            }, (error) => {
+                console.log(error.text)
+                setStatus('error')
+            })
+    }
 
-  function sendEmail(e) {
-    e.preventDefault();
-
-    emailjs.sendForm('service_29ymbsk', 'template_cxd2sqi', e.target,'user_fK8VafB6YT6akPU8QWWt1')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-      e.target.reset()
-  }
     return (
-        <div>
-        <div className=" container contact3">
-            <div className="row">
-                {/* <div className="col-lg-6 col-md-12 mt-3">
-                    <img src="./images2/computer.png" alt="Auther"  className="conatctImage"/>
-                </div> */}
-                <div className="col-lg-6 col-md-12">
-                    {/* <h2 className=" col-md-12">Quick Contact</h2> */}
-                    <form onSubmit={sendEmail}>
-                        <div className=" form-control-lg mt-3">
-                            <input className="form-control" type="text" placeholder="name" name="name" />
-                        </div>
+        <section className="contact-page">
+            <div className="container py-5">
+                <div className="contact-layout">
+                    {/* ── Left: intro + details ── */}
+                    <div className="contact-intro">
+                        <span className="section-heading__eyebrow">Contact</span>
+                        <h1 className="contact-title">Let's work together</h1>
+                        <p className="contact-lead">
+                            Have a project, a job opportunity or just a question? Send me a message
+                            and I'll get back to you as soon as I can.
+                        </p>
 
-                        <div className="form-control-lg">
-                            <input className="form-control" type="email" placeholder="email"  name="email"  />
-                        </div>
+                        <ul className="contact-details">
+                            <li>
+                                <span className="contact-details__icon"><EmailIcon /></span>
+                                <div>
+                                    <span className="contact-details__label">Email</span>
+                                    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                                </div>
+                            </li>
+                            <li>
+                                <span className="contact-details__icon"><PhoneIcon /></span>
+                                <div>
+                                    <span className="contact-details__label">Phone</span>
+                                    <a href="tel:+972537315943">053-731-5943</a>
+                                </div>
+                            </li>
+                            <li>
+                                <span className="contact-details__icon"><LocationOnIcon /></span>
+                                <div>
+                                    <span className="contact-details__label">Location</span>
+                                    <span>Tel Aviv, Israel</span>
+                                </div>
+                            </li>
+                        </ul>
 
-                        <div className=" form-control-lg">
-                            <input className="form-control" type="text" placeholder="phone"  name="subject" />
+                        <div className="hero__socials">
+                            <a href="https://github.com/NinjaDev1droid" target="_blank" rel="noreferrer" aria-label="GitHub"><GitHubIcon /></a>
+                            <a href="https://www.linkedin.com/in/goanar-abraham-5082b821a/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedInIcon /></a>
                         </div>
+                    </div>
 
-                        <div className="form-control-lg">
-                            <textarea className="form-control" rows="3" placeholder="message"  name="message" ></textarea>
+                    {/* ── Right: form ── */}
+                    <form className="contact-form" onSubmit={sendEmail}>
+                        <div className="contact-form__row">
+                            <label>
+                                <span>Name</span>
+                                <input className="form-control" type="text" name="name" placeholder="Your name" required />
+                            </label>
+                            <label>
+                                <span>Email</span>
+                                <input className="form-control" type="email" name="email" placeholder="you@example.com" required />
+                            </label>
                         </div>
-                        <div className="form-control-lg">
-                            <button type="submit" className=" btn btn-danger mt-3 text-wiht border-0 px-3 py-2"><span> SUBMIT</span></button>
-                        </div>
+                        <label>
+                            <span>Phone <em>(optional)</em></span>
+                            <input className="form-control" type="tel" name="subject" placeholder="Your phone number" />
+                        </label>
+                        <label>
+                            <span>Message</span>
+                            <textarea className="form-control" name="message" rows="6" placeholder="Tell me about your project…" required />
+                        </label>
+
+                        <button type="submit" className="project-btn project-btn--solid contact-form__submit" disabled={status === 'sending'}>
+                            {status === 'sending' ? 'Sending…' : 'Send message'}
+                        </button>
+
+                        {status === 'sent' && (
+                            <div className="contact-form__status contact-form__status--ok" role="status">
+                                Thanks! Your message was sent. I'll reply soon.
+                            </div>
+                        )}
+                        {status === 'error' && (
+                            <div className="contact-form__status contact-form__status--err" role="alert">
+                                Something went wrong. Please email me directly at {EMAIL}.
+                            </div>
+                        )}
                     </form>
-                </div>   
+                </div>
             </div>
-        </div >
- <ContactIcons/>
-        </div>
+        </section>
     )
 }
 

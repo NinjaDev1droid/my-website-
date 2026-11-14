@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Login from "./components/Login";
 import Particle from "./components/Particle";
 
 
@@ -13,9 +12,9 @@ import Particle from "./components/Particle";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
-import UploadImage from "./components/UploadImage";
 import Projects from "./components/Projects";
 
 
@@ -35,19 +34,13 @@ function App() {
           <Route exact path="/contact">
             <Contact />
           </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
         <Route exact path="/projects">
             <Projects />
           </Route>
-          
+          {/* Unknown URLs (e.g. old /login links) go to the home page */}
+          <Redirect to="/" />
         </Switch>
 
-        <Route exact path="/uplaod">
-            <UploadImage/>
-          </Route>
-        
       </Router>
      
     </div>
