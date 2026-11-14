@@ -17,11 +17,8 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark site-nav">
       <div className="container">
-        <a className="navbar-brand" href="/">
-          <span className="brand-logo">Goanar Abraham</span>
-        </a>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler ms-auto"
           type="button"
           aria-controls="mainNav"
           aria-expanded={open}
@@ -32,7 +29,7 @@ const NavBar = () => {
         </button>
 
         <div className={`collapse navbar-collapse${open ? " show" : ""}`} id="mainNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav mx-auto">
             {links.map((l) => (
               <li className="nav-item" key={l.href}>
                 <a className={`nav-link${path === l.href ? " active" : ""}`} href={l.href}>
