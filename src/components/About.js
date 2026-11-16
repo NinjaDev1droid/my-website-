@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import InstagramIcon from '@material-ui/icons/Instagram'
@@ -70,8 +71,8 @@ const About = () => {
                         </ul>
 
                         <div className="about-actions">
-                            <a href="/projects" className="project-btn project-btn--solid">View my projects</a>
-                            <a href="/contact" className="project-btn project-btn--ghost">Contact me</a>
+                            <Link to="/projects" className="project-btn project-btn--solid">View my projects</Link>
+                            <Link to="/contact" className="project-btn project-btn--ghost">Contact me</Link>
                         </div>
 
                         <div className="about-social-row">

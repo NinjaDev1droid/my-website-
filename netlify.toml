@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  # The build script uses --openssl-legacy-provider, which needs Node 17+
+  NODE_VERSION = "20"

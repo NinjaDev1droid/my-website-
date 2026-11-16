@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import Typed from "react-typed"
 import GitHubIcon from "@material-ui/icons/GitHub"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
@@ -50,7 +51,7 @@ const Header = () => {
                         </p>
 
                         <div className="hero__actions">
-                            <a href="/projects" className="project-btn project-btn--solid">View my work</a>
+                            <Link to="/projects" className="project-btn project-btn--solid">View my work</Link>
                             <a href={CV_URL} target="_blank" rel="noreferrer" className="project-btn project-btn--ghost">View CV</a>
                         </div>
 
@@ -94,7 +95,7 @@ const Header = () => {
                             <span className="section-heading__eyebrow">Recent work</span>
                             <h2 className="section-heading__title">Featured Projects</h2>
                         </div>
-                        <a href="/projects" className="section-heading__link">See all projects →</a>
+                        <Link to="/projects" className="section-heading__link">See all projects →</Link>
                     </div>
                     <div className="projects-grid featured-grid">
                         {featured.map((project, i) => (
@@ -110,7 +111,7 @@ const Header = () => {
                     <div className="cta-band">
                         <h2>Have a project in mind?</h2>
                         <p>I'm open to freelance work and full-time roles. Let's build something together.</p>
-                        <a href="/contact" className="project-btn project-btn--solid">Get in touch</a>
+                        <Link to="/contact" className="project-btn project-btn--solid">Get in touch</Link>
                     </div>
                 </div>
             </section>

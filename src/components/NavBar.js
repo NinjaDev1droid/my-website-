@@ -1,18 +1,17 @@
 import React, { useState } from "react"
+import { NavLink } from "react-router-dom"
 import "./nav.css"
 import "./protfolio.css"
-import "bootstrap/dist/css/bootstrap.min.css"
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/projects", label: "Projects" },
+  { to: "/contact", label: "Contact" },
 ]
 
 const NavBar = () => {
   const [open, setOpen] = useState(false)
-  const path = window.location.pathname
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark site-nav">
@@ -31,10 +30,16 @@ const NavBar = () => {
         <div className={`collapse navbar-collapse${open ? " show" : ""}`} id="mainNav">
           <ul className="navbar-nav mx-auto">
             {links.map((l) => (
-              <li className="nav-item" key={l.href}>
-                <a className={`nav-link${path === l.href ? " active" : ""}`} href={l.href}>
+              <li className="nav-item" key={l.to}>
+                <NavLink
+                  exact
+                  to={l.to}
+                  className="nav-link"
+                  activeClassName="active"
+                  onClick={() => setOpen(false)}
+                >
                   {l.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>

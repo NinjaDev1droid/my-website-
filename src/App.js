@@ -13,16 +13,26 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
+  useLocation
 } from "react-router-dom";
 import Projects from "./components/Projects";
+
+// Without full page reloads, start each new page at the top
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 
 function App() {
   return (
-    <div>
+    <Router>
       <NavBar />
-      <Router>
+      <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <Particle />
@@ -34,21 +44,20 @@ function App() {
           <Route exact path="/contact">
             <Contact />
           </Route>
-        <Route exact path="/projects">
+          <Route exact path="/projects">
             <Projects />
           </Route>
           {/* Unknown URLs (e.g. old /login links) go to the home page */}
           <Redirect to="/" />
         </Switch>
 
-      </Router>
 
       <footer className="site-footer">
         <div className="container">
           © {new Date().getFullYear()} Goanar Abraham
         </div>
       </footer>
-    </div>
+    </Router>
   );
 }
 

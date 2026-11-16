@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
 import projects from './projectsData'
@@ -67,7 +68,7 @@ const Projects = () => {
                 <div className="cta-band projects-cta">
                     <h2>Like what you see?</h2>
                     <p>I'm available for new projects. Tell me what you want to build.</p>
-                    <a href="/contact" className="project-btn project-btn--solid">Get in touch</a>
+                    <Link to="/contact" className="project-btn project-btn--solid">Get in touch</Link>
                 </div>
             </div>
         </section>
