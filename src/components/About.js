@@ -14,8 +14,9 @@ const XIcon = (props) => (
 
 // Same technologies shown on the home page hero
 const skills = [
-    'JavaScript', 'React', 'Angular', 'HTML', 'CSS',
+    'JavaScript', 'React', 'Node.js', 'Angular', 'HTML', 'CSS',
     'Java', 'C#', 'Python', 'Go', 'Ruby', 'SQL', 'Firebase', 'Git',
+    'Gmail API', 'Anthropic SDK (LLMs)', 'Automation',
 ]
 
 const socials = [

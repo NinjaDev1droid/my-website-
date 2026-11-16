@@ -24,9 +24,11 @@ export const ProjectCard = ({ project, index }) => (
         </ul>
 
         <div className="project-card__links">
-            <a href={project.repo} target="_blank" rel="noreferrer" className="project-btn project-btn--ghost">
-                <GitHubIcon style={{ fontSize: 18 }} /> Code
-            </a>
+            {project.repo && (
+                <a href={project.repo} target="_blank" rel="noreferrer" className="project-btn project-btn--ghost">
+                    <GitHubIcon style={{ fontSize: 18 }} /> Code
+                </a>
+            )}
             {project.demo && (
                 <a href={project.demo} target="_blank" rel="noreferrer" className="project-btn project-btn--solid">
                     <LaunchIcon style={{ fontSize: 18 }} /> Live demo
@@ -58,7 +60,7 @@ const Projects = () => {
 
                 <div className="projects-grid">
                     {projects.map((project, i) => (
-                        <ProjectCard key={project.repo} project={project} index={i} />
+                        <ProjectCard key={project.title} project={project} index={i} />
                     ))}
                 </div>
 
