@@ -37,6 +37,7 @@ const projects = [
             "Search any city and get the current temperature and conditions from the OpenWeatherMap API.",
         tags: ["React", "JavaScript", "CSS"],
         repo: `${GITHUB}/Weather-App`,
+        demo: "https://ninjadev1droid.github.io/Weather-App/",
     },
     {
         title: "PinkHost",
